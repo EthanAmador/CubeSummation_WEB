@@ -1,0 +1,27 @@
+<div class="alert alert-danger" role="alert" [hidden]="!showError">
+    {{textError}}
+</div>
+
+<div class="container">
+  <div class="row">
+    <form [formGroup]="operacion" (ngSubmit)="onSubmit()">
+      <div class="col">
+        <div class="form-group">
+          <textarea class="form-control" id="textArea" rows="10" cols="60" placeholder="Ingrese operación"
+            formControlName="txtdato" required>
+            </textarea>
+        </div>
+      </div>
+      <div class="col">
+        <button type="submit" class="btn btn-outline-success" [disabled]="!operacion.valid">Calcular</button>
+      </div>
+    </form>
+    <div class="col">
+      <div class="form-group">
+        <textarea class="form-control" id="textArearesult" rows="10" cols="40" placeholder="Resultado operación"
+          [formControl]="txtdatoResult" readonly>
+        </textarea>
+      </div>
+    </div>
+  </div>
+</div>
